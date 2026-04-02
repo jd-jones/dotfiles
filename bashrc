@@ -3,10 +3,10 @@
 
 unset PROMPT_COMMAND
 
-# Prompt — matches zsh style: full path with ~, short hostname, green $ / #
+# Prompt — matches zsh style: full path with ~, short hostname, green >
 _green="\[$(tput setaf 2)\]"
 _reset="\[$(tput sgr0)\]"
-export PS1="\n(\d \@) \u @ \h :: \w\n${_green}\$${_reset} "
+export PS1="\n(\d \@) \u @ \h :: \w\n${_green}>${_reset} "
 unset _green _reset
 
 # Shared environment
