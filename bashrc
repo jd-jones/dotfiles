@@ -14,3 +14,5 @@ unset _green _reset
 
 # Shared environment
 [ -f "$HOME/.env.sh" ] && . "$HOME/.env.sh"
+
+export PATH="$HOME/bin:$PATH"

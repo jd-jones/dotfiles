@@ -9,3 +9,5 @@ PROMPT='
 
 # Shared environment
 [ -f "$HOME/.env.sh" ] && source "$HOME/.env.sh"
+
+export PATH="$HOME/bin:$PATH"
