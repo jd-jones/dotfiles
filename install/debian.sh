@@ -61,6 +61,7 @@ _clone_or_update https://github.com/catppuccin/tmux              ~/.config/tmux/
 _clone_or_update https://github.com/tmux-plugins/tmux-cpu        ~/.config/tmux/plugins/tmux-plugins/tmux-cpu
 _clone_or_update https://github.com/tmux-plugins/tmux-battery    ~/.config/tmux/plugins/tmux-plugins/tmux-battery
 _clone_or_update https://github.com/Nybkox/tmux-ukiyo            ~/.config/tmux/plugins/Nybkox/tmux-ukiyo
+_clone_or_update https://github.com/arcticicestudio/nord-tmux    ~/.config/tmux/plugins/arcticicestudio/nord-tmux
 
 echo ""
 echo "Debian setup complete."

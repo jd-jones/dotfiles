@@ -29,6 +29,7 @@ _clone_or_update https://github.com/catppuccin/tmux              ~/.config/tmux/
 _clone_or_update https://github.com/tmux-plugins/tmux-cpu        ~/.config/tmux/plugins/tmux-plugins/tmux-cpu
 _clone_or_update https://github.com/tmux-plugins/tmux-battery    ~/.config/tmux/plugins/tmux-plugins/tmux-battery
 _clone_or_update https://github.com/Nybkox/tmux-ukiyo            ~/.config/tmux/plugins/Nybkox/tmux-ukiyo
+_clone_or_update https://github.com/arcticicestudio/nord-tmux    ~/.config/tmux/plugins/arcticicestudio/nord-tmux
 
 # VSCode extensions — all three theme variants
 if command -v code &>/dev/null; then
@@ -36,6 +37,7 @@ if command -v code &>/dev/null; then
   code --install-extension catppuccin.catppuccin-vsc
   code --install-extension qufiwefefwoyn.kanagawa
   code --install-extension PatrickNasralla.tokyo-night-moon
+  code --install-extension arcticicestudio.nord-visual-studio-code
 fi
 
 # iTerm2 color presets — opens each .itermcolors file so iTerm2 prompts to import.
@@ -50,6 +52,7 @@ if [ -d "/Applications/iTerm.app" ] || [ -d "$HOME/Applications/iTerm.app" ]; th
   open "$DOTFILES/themes/kanagawa/Kanagawa Wave.itermcolors"
   open "$DOTFILES/themes/kanagawa/Kanagawa Dragon.itermcolors"
   open "$DOTFILES/themes/tokyonight/Tokyo Night Moon.itermcolors"
+  open "$DOTFILES/themes/nord/Nord.itermcolors"
 fi
 
 echo ""

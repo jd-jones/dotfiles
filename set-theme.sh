@@ -6,6 +6,7 @@ VALID_THEMES=(
   "catppuccin/latte" "catppuccin/frappe" "catppuccin/macchiato" "catppuccin/mocha"
   "kanagawa/wave" "kanagawa/dragon"
   "tokyonight/moon"
+  "nord/nord"
 )
 
 if [ "${1:-}" = "" ]; then
@@ -59,6 +60,11 @@ case "$THEME" in
   tokyonight/moon)
     VSCODE_THEME="Tokyo Night Moon"
     ITERM_PRESET="Tokyo Night Moon"
+    ;;
+  nord/nord)
+    NVIM_COLORSCHEME="nord"
+    VSCODE_THEME="Nord"
+    ITERM_PRESET="Nord"
     ;;
 esac
 

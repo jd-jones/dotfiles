@@ -15,7 +15,7 @@ bash install/macos.sh   # macOS — uses Homebrew
 bash install/debian.sh  # Debian/Ubuntu — uses apt + GitHub releases
 ```
 
-Both scripts install packages, initialize submodules, and call `install/symlinks.sh` to create all symlinks. Symlinks can be re-run standalone and are idempotent.
+Both scripts install packages and call `install/symlinks.sh` to create all symlinks. Symlinks can be re-run standalone and are idempotent.
 
 ## Architecture
 
@@ -32,21 +32,21 @@ Both scripts install packages, initialize submodules, and call `install/symlinks
 - Vim-style pane navigation (`h/j/k/l`)
 - Mouse support enabled
 - `tmux-256color` + `terminal-overrides` for true-color passthrough (required for Neovim themes)
-- Nord theme via `nord-tmux/` submodule
+- Nord theme via `arcticicestudio/nord-tmux` plugin (cloned to `~/.config/tmux/plugins/arcticicestudio/nord-tmux/` by install scripts)
 
 ### Neovim (`nvim/`)
 Config uses **lazy.nvim** for plugin management. `nvim/init.lua` bootstraps lazy and sets all options. Plugins are in `nvim/lua/plugins/`, one file per concern — lazy auto-discovers them all.
 
 | File | Purpose |
 |---|---|
-| `colorscheme.lua` | Catppuccin Mocha (default); Kanagawa and Tokyo Night are commented alternatives |
+| `colorscheme.lua` | Catppuccin Mocha (default); Kanagawa, Tokyo Night, and Nord are installed alternatives |
 | `lsp.lua` | mason + mason-lspconfig + nvim-lspconfig; auto-installs `lua_ls`, `pyright`, `bashls` |
 | `cmp.lua` | nvim-cmp completion with LSP, buffer, path, and LuaSnip sources |
 | `telescope.lua` | Fuzzy finding (`<leader>ff/fg/fb/fh`); replaces FZF |
 | `treesitter.lua` | Syntax/indent for bash, lua, python, and more |
 | `ui.lua` | lualine (statusline) + gitsigns |
 
-**Switching colorschemes**: run `./set-theme.sh <family/variant>` from the dotfiles root (e.g. `catppuccin/mocha`, `kanagawa/wave`, `tokyonight/moon`). This updates the `theme` file, reloads tmux, and best-effort reloads running nvim instances. A full nvim restart is needed for lualine/treesitter highlights to update.
+**Switching colorschemes**: run `./set-theme.sh <family/variant>` from the dotfiles root (e.g. `catppuccin/mocha`, `kanagawa/wave`, `tokyonight/moon`, `nord/nord`). This updates the `theme` file, reloads tmux, and best-effort reloads running nvim instances. A full nvim restart is needed for lualine/treesitter highlights to update.
 
 **LSP servers**: managed via `:Mason` inside Neovim. The default handler in `lsp.lua` automatically applies to any server installed through Mason.
 
@@ -57,6 +57,3 @@ Config uses **lazy.nvim** for plugin management. `nvim/init.lua` bootstraps lazy
 - `themes/{theme}/tmux.conf` — static tmux status bar config per theme
 - `nvim/lua/config/theme.lua` — shared Lua helper that reads the `theme` file; used by `colorscheme.lua` and `ui.lua`
 
-### Git Submodules (legacy)
-- `nord-tmux/` — no longer used; can be removed with `git submodule deinit nord-tmux`
-- `nord-vim/` — Nord color theme source; `vim/colors/nord.vim` was copied from here

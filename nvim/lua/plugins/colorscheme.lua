@@ -31,4 +31,12 @@ return {
       vim.cmd.colorscheme(cs)
     end or nil,
   },
+  {
+    "shaunsingh/nord.nvim",
+    priority = 1000,
+    lazy     = family ~= "nord",
+    config   = family == "nord" and function()
+      vim.cmd.colorscheme("nord")
+    end or nil,
+  },
 }

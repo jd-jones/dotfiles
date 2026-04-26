@@ -15,6 +15,8 @@ if [ -f "$THEME_CONF" ]; then
     catppuccin)
       tmux set-option -gq @catppuccin_flavor "$VARIANT"
       ;;
+    nord)
+      ;;  # nord-tmux is static — no plugin variables needed
     *)
       tmux set-option -gq @ukiyo-theme "$THEME"
       ;;

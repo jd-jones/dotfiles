@@ -11,6 +11,7 @@ local theme_plugin = ({
   catppuccin = "catppuccin/nvim",
   kanagawa   = "rebelot/kanagawa.nvim",
   tokyonight = "folke/tokyonight.nvim",
+  nord       = "shaunsingh/nord.nvim",
 })[family]
 
 return {
