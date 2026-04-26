@@ -1,6 +1,9 @@
 # Source global definitions
 [ -f /etc/bashrc ] && . /etc/bashrc
 
+# Non-interactive shells (e.g. ssh remote-cmd) don't need a prompt or env setup
+[[ $- == *i* ]] || return
+
 unset PROMPT_COMMAND
 
 # Prompt — matches zsh style: full path with ~, short hostname, green >
